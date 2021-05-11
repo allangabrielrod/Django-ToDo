@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style type="text/css">
+      .side-nav {
+        height: 100%;
+        width: 160px;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: #111;
+        overflow-x: hidden;
+        padding-top: 20px;
+      }
+
+      .side-nav a {
+        padding: 6px 8px 6px 16px;
+        text-decoration: none;
+        color: #818181;
+        font-size: 25px;
+        display: block;
+      }
+
+      .side-nav a:hover {
+        color: #f1f1f1;
+      }
+
+      .main {
+        margin-left: 160px;
+        padding: 0px 10px;
+      }
+    </style>
+    <title>{% block title %}ToDoList App {% endblock %}</title>
+  </head>
+  <body>
+    <div class="side-nav">
+      <a href="/home">Home</a>
+      <a href="/create">Create</a>
+      <a href="/view">View</a>
+    </div>
+
+    <div id="content" , name="content" class="main">
+      <div class="row justify-content-center">
+        <div class="col-8">
+          <h1 class="mt-2">My Site</h1>
+          <hr class="mt-0 mb-4"/>
+            {% block content %} 
+            {% endblock %}
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
